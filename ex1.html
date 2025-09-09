@@ -25,9 +25,9 @@
 
             let alerts = "";
             if (id.length > 10) alerts += "ID must be less than 10 chars\n";
-            if (!(age >= 10 && age <= 40)) alerts += "Age must be between 10 and 40\n";
-            if (!email.includes("@")) alerts += "Email must contain the character @\n";
-            if (!password.length) alerts += "Password must be non-empty\n";
+            if (!(age >= 10 && age <= 40)) alerts += "Age must be between 10 and 40.\n";
+            if (!email.includes("@")) alerts += "Email must contain the character @.\n";
+            if (!password.length) alerts += "Password must be non-empty.\n";
 
             if (alerts){ alert(alerts); return false; }
             return true; // allow submit
