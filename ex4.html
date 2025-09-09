@@ -1,32 +1,51 @@
 <html>
+   <head>
+      <title>Event Handling</title>
+   </head>
+   <body>
+     
+      <h1>Shopping List</h1>
+      <p>Get it done today</p>
+      
+        <!-- add HTML code here -->
+      <input type="text" id="item" placeholder="enter items">
+      <input type="submit" value="Enter" onclick="addItem()">
+      <ul id="list">
+         <li>Notebook <button onclick="deleteItem(this)">delete</button></li>
+         <li>Jello <button onclick="deleteItem(this)">delete</button></li>
+         <li>Spinach <button onclick="deleteItem(this)">delete</button></li>
+         <li>Rice <button onclick="deleteItem(this)">delete</button></li>
+         <li>Birthday Cake <button onclick="deleteItem(this)">delete</button></li>
+         <li>Candles <button onclick="deleteItem(this)">delete</button></li>
+      </ul>
+      
+      <script>
+      
+        // add code here
+         function addItem() {
+            let item = document.getElementById("item");
+            const list = document.getElementById("list");
 
-<head>
-   <title>Event Handling</title>
-</head>
+            const newItem = document.createElement('li');
+            newItem.textContent = item.value + ' ';
 
-<body>
+            // Delete button
+            const delBtn = document.createElement('button');
+            delBtn.textContent = 'delete';
+            delBtn.onclick = function() {
+               newItem.remove();
+            };
 
-   <h1>Shopping List</h1>
-   <p>Get it done today</p>
+            newItem.appendChild(delBtn);
+            list.appendChild(newItem);
 
-   <input type="text" id="inputText">
-   <!-- add a button here for adding new item -->
+            item.value = '';  // Clear input
+         }
 
-   <ul>
-      <li>Notebook<!--<button>Delete</button></li>-->
-      <li>Jello</li>
-      <li>Spinach</li>
-      <li>Rice</li>
-      <li>Birthday Cake</li>
-      <li>Candles</li>
-   </ul>
-
-   <script>
-
-      // add code here
-
-   </script>
-
-</body>
-
+         function deleteItem(button) {
+            button.parentElement.remove();
+         }
+      </script>
+ 
+   </body>
 </html>

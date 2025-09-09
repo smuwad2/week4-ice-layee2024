@@ -10,7 +10,7 @@
         }
 
         /* add CSS code here */
-        
+
     </style>
 
     
@@ -24,9 +24,23 @@
     <button onclick="changeShape()">Make a change!</button>
 
     <script>
-        var square=true;
-       // add code here
         
+       // add code here
+       
+       function changeShape() {
+            let ele = document.getElementById("div1");
+            let currentState = ele.style.borderRadius;
+
+            if (!currentState || currentState === "0%") {
+                ele.style.borderRadius = "50%";
+            } else {
+                ele.style.borderRadius = "0%";
+            }
+
+            console.log(ele.style.borderRadius);
+        }
+
+
     </script>
 
 </body>
