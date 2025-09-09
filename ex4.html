@@ -3,14 +3,13 @@
       <title>Event Handling</title>
    </head>
    <body>
-     
       <h1>Shopping List</h1>
       <p>Get it done today</p>
-      
-        <!-- add HTML code here -->
+
       <input type="text" id="inputText" placeholder="enter items">
+
       <button onclick="addItem()">Enter</button>
-      
+
       <ul id="list">
          <li>Notebook <button onclick="deleteItem(this)">delete</button></li>
          <li>Jello <button onclick="deleteItem(this)">delete</button></li>
@@ -19,12 +18,10 @@
          <li>Birthday Cake <button onclick="deleteItem(this)">delete</button></li>
          <li>Candles <button onclick="deleteItem(this)">delete</button></li>
       </ul>
-      
+
       <script>
-      
-        // add code here
          function addItem() {
-            let item = document.getElementById("item");
+            let item = document.getElementById("inputText");
             const list = document.getElementById("list");
 
             const newItem = document.createElement('li');
@@ -40,13 +37,12 @@
             newItem.appendChild(delBtn);
             list.appendChild(newItem);
 
-            item.value = '';  // Clear input
+            item.value = '';
          }
 
          function deleteItem(button) {
             button.parentElement.remove();
          }
       </script>
- 
    </body>
 </html>
